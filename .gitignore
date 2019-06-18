@@ -4,6 +4,7 @@ HELP.md
 !gradle/wrapper/gradle-wrapper.jar
 **/out
 **/build
+**/project
 
 ### STS ###
 .apt_generated
