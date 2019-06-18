@@ -45,14 +45,14 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator testList = new OddNumbersExterminator();
         //When
-        ArrayList<Integer> numbers = new ArrayList<>(5000);
-        ArrayList<Integer> evenNumbers = new ArrayList<>(2500);
-        for (int i = 0; i < 5000; i++) {
-            numbers.add(i);
-        }
-        for (int j = 0; j < 2500; j++) {
-            evenNumbers.add(2 * j);
-        }
+        ArrayList<Integer> numbers = new ArrayList<>(4);
+        ArrayList<Integer> evenNumbers = new ArrayList<>(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(7);
+        numbers.add(10);
+        evenNumbers.add(4);
+        evenNumbers.add(10);
         System.out.println("Begining of normal list extermination.");
         //Then
         Assert.assertEquals(evenNumbers, testList.exterminate(numbers));
