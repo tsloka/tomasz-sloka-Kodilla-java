@@ -2,6 +2,8 @@ package com.kodilla.testing.collection;
 
 import org.junit.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CollectionTestSuite {
     @BeforeClass
@@ -29,7 +31,7 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator testList = new OddNumbersExterminator();
         //When
-        ArrayList<Integer> numbers = new ArrayList<>(0);
+        ArrayList<Integer> numbers = new ArrayList<>();
         System.out.println("Testing empty list.");
         //Then
         Assert.assertEquals(numbers, testList.exterminate(numbers));
@@ -40,8 +42,8 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator testList = new OddNumbersExterminator();
         //When
-        ArrayList<Integer> numbers = new ArrayList<>(4);
-        ArrayList<Integer> evenNumbers = new ArrayList<>(2);
+        List<Integer> numbers = new LinkedList<>();
+        List<Integer> evenNumbers = new LinkedList<>();
         numbers.add(3);
         numbers.add(4);
         numbers.add(7);
