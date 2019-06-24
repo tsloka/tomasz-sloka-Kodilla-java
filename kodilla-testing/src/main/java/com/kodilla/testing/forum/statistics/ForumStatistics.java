@@ -2,8 +2,8 @@ package com.kodilla.testing.forum.statistics;
 
 public class ForumStatistics {
     private int usersCount;
-    private int postsCount;
-    private int commentsCount;
+    private double postsCount;
+    private double commentsCount;
     private double userPostsAvg;
     private double userCommentsAvg;
     private double postCommentsAvg;
@@ -48,11 +48,11 @@ public class ForumStatistics {
         return usersCount;
     }
 
-    public int getPostsCount() {
+    public double getPostsCount() {
         return postsCount;
     }
 
-    public int getCommentsCount() {
+    public double getCommentsCount() {
         return commentsCount;
     }
 
