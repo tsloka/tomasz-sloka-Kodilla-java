@@ -1,12 +1,7 @@
 package com.kodilla.testing.collection;
 
-import com.kodilla.testing.user.SimpleUser;
 import org.junit.*;
-import org.junit.runners.Parameterized;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Random;
 
 public class CollectionTestSuite {
     @BeforeClass
