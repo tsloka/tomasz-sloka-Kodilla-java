@@ -1,9 +1,9 @@
 package com.kodilla.testing.shape;
 
 public class Triangle implements Shape {
-    double sideA;
-    double sideB;
-    double angle;
+    private double sideA;
+    private double sideB;
+    private double angle;
 
     public Triangle() {
 

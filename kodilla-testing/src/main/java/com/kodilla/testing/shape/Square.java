@@ -1,19 +1,19 @@
 package com.kodilla.testing.shape;
 
 public class Square implements Shape {
-    double sideLenght;
+    private double sideLength;
 
     public Square() {
 
     }
 
     public Square(double sideLenght) {
-        this.sideLenght = sideLenght;
+        this.sideLength = sideLenght;
     }
 
     @Override
     public double getField() {
-        return Math.pow(sideLenght, (int) 2);
+        return Math.pow(sideLength, (int) 2);
     }
 
     @Override

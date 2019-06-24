@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeCollector {
-    List<Shape> figures = new ArrayList<>();
+    private List<Shape> figures;
 
     public ShapeCollector() {
-
+        figures = new ArrayList<>();
     }
 
     public void addFigure(Shape shape) {
@@ -23,7 +23,11 @@ public class ShapeCollector {
     }
 
     public void showFigures() {
-        figures.toString();
+        int i = 0;
+        for (Shape shape : figures) {
+            i++;
+            System.out.println("Figure " + i + ": " + shape.getShapeName() + " field equals: " + shape.getField());
+        }
     }
 
     public int figuresCount() {
