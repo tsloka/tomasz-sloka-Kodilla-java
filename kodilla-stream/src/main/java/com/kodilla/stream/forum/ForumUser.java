@@ -47,6 +47,14 @@ public class ForumUser {
         return friends;
     }
 
+    public Set<String> getLocationsOfFriendsOfFriends() {
+        return friends.stream()
+                .flatMap(user -> user.getFriends().stream())
+                .filter(user -> user != this)
+                .map(ForumUser::getLocation)
+                .collect(Collectors.toSet());
+    }
+
     @Override
     public String toString() {
         return "ForumUser{" +
