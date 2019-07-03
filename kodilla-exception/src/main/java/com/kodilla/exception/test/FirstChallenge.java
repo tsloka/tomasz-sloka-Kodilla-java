@@ -22,13 +22,12 @@ public class FirstChallenge {
         FirstChallenge firstChallenge = new FirstChallenge();
         double result = 0;
         try {
-            result = firstChallenge.divide(3, 1);
+            result = firstChallenge.divide(3, 0);
         } catch (ArithmeticException e) {
-            System.out.println("never divide by zero!" + e);
+            System.out.println("Never divide by zero! Error: " + e);
         } finally {
-            System.out.println("Whatever");
+            System.out.println("Final message... ;)");
         }
-
 
         System.out.println(result);
 
