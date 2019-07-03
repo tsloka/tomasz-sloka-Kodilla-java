@@ -1,7 +1,15 @@
 package com.kodilla.exception.test;
 
+import com.sun.org.apache.bcel.internal.ExceptionConstants;
+
 public class ThirdChallenge {
+    public static void catchmessage(Exception e) {
+        System.out.println("There wes a mistake during application execution: \n"
+                + e + "\n but we handled it.");
+    }
+
     public static void main(String[] args) {
+
         FlightSearcher searcher = new FlightSearcher();
         Flight gdanskToWroclaw = new Flight("Gdansk", "Wroclaw");
         Flight warsawToWroclaw = new Flight("Warsaw", "Wroclaw");
@@ -10,22 +18,19 @@ public class ThirdChallenge {
         try {
             searcher.findFlight(gdanskToWroclaw);
         } catch (Exception e) {
-            System.out.println("There were some mistakes during application execution: \n"
-                    + e + "\n but we handled them :D");
+            catchmessage(e);
         }
         try {
             searcher.findFlight(warsawToWroclaw);
         } catch (Exception e) {
-            System.out.println("There were some mistakes during application execution: \n"
-                    + e + "\n but we handled them :D");
+            catchmessage(e);
         }
         try {
             searcher.findFlight(berlinToRzeszow);
         } catch (Exception e) {
-            System.out.println("There were some mistakes during application execution: \n"
-                    + e + "\n but we handled them :D");
+            catchmessage(e);
         } finally {
-            System.out.println("See you next time, our app is the best...");
+            System.out.println("See you next time...");
         }
     }
 }
