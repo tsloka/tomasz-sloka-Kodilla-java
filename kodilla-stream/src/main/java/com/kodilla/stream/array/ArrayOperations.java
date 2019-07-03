@@ -15,7 +15,6 @@ public interface ArrayOperations {
                 .average().orElse(0);
     }
     static double altAverage(int[] numbers) {
-        return Arrays.stream(numbers).map(n->numbers[n-1])
-                .average().orElse(0);
+        return Arrays.stream(numbers).average().orElse(0);
     }
 }
