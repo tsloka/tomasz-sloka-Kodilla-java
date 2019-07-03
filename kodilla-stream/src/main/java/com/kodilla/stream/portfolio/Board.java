@@ -41,10 +41,10 @@ public final class Board {
                 '}';
     }
 
-    public double averageTaskTime(TaskList taskList) {
+    public double averageTaskTime(List<TaskList> taskList) {
         return taskLists.stream()
+                .filter(taskList::contains)
                 .flatMap(t1 -> t1.getTasks().stream())
-                .filter(task -> task.)
                 .map(Task::getCreated)
                 .mapToInt(d -> Period.between(d, LocalDate.now()).getDays())
                 .average().orElse(0);

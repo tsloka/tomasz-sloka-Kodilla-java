@@ -18,4 +18,16 @@ public class ArrayOperationsTestSuite {
         //Then
         Assert.assertEquals(average, ArrayOperations.getAverage(numbers),0.001);
     }
+
+    @Test
+    public void testEmptyTable() {
+        //Given
+        int[] numbers = {};
+
+        //When
+        double average = 0;
+
+        //Then
+        Assert.assertEquals(average, ArrayOperations.getAverage(numbers),0.001);
+    }
 }
