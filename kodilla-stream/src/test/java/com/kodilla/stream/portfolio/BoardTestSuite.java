@@ -143,19 +143,13 @@ public class BoardTestSuite {
     public void testAddTaskListAverageWorkingOnTask() {
         //Given
         Board project = prepareTestData();
+        TaskList testTaskList = new TaskList("");
 
         //When
-        List<TaskList> inProgressTasks = new ArrayList<>();
-        inProgressTasks.add(new TaskList("In progress"));
-        Double averageTaskTime = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(t1 -> t1.getTasks().stream())
-                .map(Task::getCreated)
-                .mapToInt(d -> Period.between(d, LocalDate.now()).getDays())
-                .average().getAsDouble();
-        Double compareTo = 10.0;
+        double averageTaskTime = project.averageTaskTime(project.getSpecificTaskList());
+        double compareTo = 10.0;
 
         //Then
-        Assert.assertEquals(compareTo, averageTaskTime);
+        Assert.assertEquals(compareTo, averageTaskTime,0.1);
     }
 }

@@ -1,5 +1,7 @@
 package com.kodilla.stream.portfolio;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,10 @@ public final class Board {
         return new ArrayList<>(taskLists);
     }
 
+    public TaskList getSpecificTaskList(TaskList taskList) {
+        return taskLists.get(taskLists.indexOf(taskList));
+    }
+
     public String getName() {
         return name;
     }
@@ -33,5 +39,14 @@ public final class Board {
                 "name='" + name + '\'' + ",\n" +
                 "taskLists=" + taskLists + "\n" +
                 '}';
+    }
+
+    public double averageTaskTime(TaskList taskList) {
+        return taskLists.stream()
+                .flatMap(t1 -> t1.getTasks().stream())
+                .filter(task -> task.)
+                .map(Task::getCreated)
+                .mapToInt(d -> Period.between(d, LocalDate.now()).getDays())
+                .average().orElse(0);
     }
 }
