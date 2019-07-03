@@ -17,6 +17,7 @@ public class ArrayOperationsTestSuite {
 
         //Then
         Assert.assertEquals(average, ArrayOperations.getAverage(numbers),0.001);
+        Assert.assertEquals(average, ArrayOperations.altAverage(numbers),0.001);
     }
 
     @Test
@@ -29,5 +30,6 @@ public class ArrayOperationsTestSuite {
 
         //Then
         Assert.assertEquals(average, ArrayOperations.getAverage(numbers),0.001);
+        Assert.assertEquals(average, ArrayOperations.altAverage(numbers),0.001);
     }
 }
