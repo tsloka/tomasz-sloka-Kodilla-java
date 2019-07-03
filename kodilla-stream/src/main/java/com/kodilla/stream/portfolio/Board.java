@@ -25,10 +25,6 @@ public final class Board {
         return new ArrayList<>(taskLists);
     }
 
-    public TaskList getSpecificTaskList(TaskList taskList) {
-        return taskLists.get(taskLists.indexOf(taskList));
-    }
-
     public String getName() {
         return name;
     }
@@ -46,7 +42,7 @@ public final class Board {
                 .filter(taskList::contains)
                 .flatMap(t1 -> t1.getTasks().stream())
                 .map(Task::getCreated)
-                .mapToInt(d -> Period.between(d, LocalDate.now()).getDays())
+                .mapToDouble(d -> Period.between(d, LocalDate.now()).getDays())
                 .average().orElse(0);
     }
 }
