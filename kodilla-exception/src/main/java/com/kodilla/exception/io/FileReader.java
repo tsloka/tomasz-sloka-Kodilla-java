@@ -8,18 +8,18 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class FileReader {
-    public void readFile() {
+    public void readFile() throws FileReaderException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file/names.txt").getFile());
         System.out.println(file.getPath());
 
-        try (Stream<String> fileLines = Files.lines(Paths.get(file.getPath()))){
+        try (Stream<String> fileLines = Files.lines(Paths.get(file.getPath()))) {
 
             fileLines.forEach(System.out::println);
 
         } catch (IOException e) {
 
-            System.out.println("Oh no, challenge not accepted... Error: " + e);
+            throw new FileReaderException();
 
         } finally {
             System.out.println("Whatever happens, challenge will always be accepted ;)");
