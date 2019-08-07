@@ -1,7 +1,5 @@
 package com.kodilla.exception.test;
 
-import com.sun.org.apache.bcel.internal.ExceptionConstants;
-
 public class ThirdChallenge {
     public static void catchmessage(Exception e) {
         System.out.println("There wes a mistake during application execution: \n"

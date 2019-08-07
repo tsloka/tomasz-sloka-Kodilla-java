@@ -1,9 +1,5 @@
 package com.kodilla.exception.test;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
-import java.io.IOException;
-
 public class FirstChallenge {
     public double divide(double a, double b) throws ArithmeticException {
         if (b == 0) {
