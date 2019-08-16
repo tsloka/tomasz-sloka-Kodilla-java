@@ -5,13 +5,15 @@ public class User {
     private final String name;
     private final String surname;
     private final String address;
-//    private final List<> orders;
+    private final String email;
+//    private final List<TransactionOperation> transactions;
 
-    public User(String username, String name, String surname, String address) {
+    public User(String username, String name, String surname, String address, String email) {
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.address = address;
+        this.email = email;
     }
 
     public String getUsername() {
@@ -30,5 +32,7 @@ public class User {
         return address;
     }
 
-
+    public String getEmail() {
+        return email;
+    }
 }

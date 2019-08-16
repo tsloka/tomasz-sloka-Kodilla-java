@@ -10,5 +10,7 @@ public class GoodPatternsMain {
         String output = movieStore.getMovies().entrySet().stream().flatMap(entry -> entry.getValue().stream())
                 .collect(Collectors.joining(" ! "));
         System.out.println(output);
+
+
     }
 }
