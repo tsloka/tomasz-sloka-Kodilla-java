@@ -5,8 +5,8 @@ public class SearchMain {
         FlightDatabase database = new FlightDatabase();
         SearchEngine search = new SearchEngine();
 
-        search.findArriving(Cities.WROCŁAW, database);
+        search.findArriving(Cities.WROCLAW, database);
         search.findDeparting(Cities.BERLIN, database);
-        search.findWithOneTransfer(Cities.PARYŻ, Cities.KRAKÓW, database);
+        search.findWithOneTransfer(Cities.PARYZ, Cities.KRAKOW, database);
     }
 }
