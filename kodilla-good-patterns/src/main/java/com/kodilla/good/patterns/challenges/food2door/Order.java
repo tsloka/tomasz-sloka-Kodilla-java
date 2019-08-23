@@ -14,7 +14,7 @@ public class Order {
 
     public void createOrder(Order order) {
         supplier.process(order);
-        order.toString();
+        System.out.println(order.toString());
         supplier.sendNotification();
         supplier.orderDelivery();
     }
