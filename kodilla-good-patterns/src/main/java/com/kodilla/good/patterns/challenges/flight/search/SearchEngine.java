@@ -28,6 +28,9 @@ public class SearchEngine {
                         arrivalFlights.stream().filter(x -> x.getFrom().equals(s.getTo())).
                                 filter(x->x.getStartingTime().isAfter(s.getLandingTime())).findAny().orElse(null)));
 
+        results = departureFlights.stream().map(s->new SearchResultOneTransfer(s,arrivalFlights.stream().filter(x -> x.getFrom().equals(s.getTo())).
+                filter(x->x.getStartingTime().isAfter(s.getLandingTime())).findFirst()));
+
 //        for (Flight flight : departureFlights) {
 //            arrivalFlights.stream().filter(s -> s.getFrom().equals(flight.getTo()))
 //                    .filter(s -> s.getStartingTime().isAfter(flight.getLandingTime()))
