@@ -22,20 +22,13 @@ public class SearchEngine {
                 .collect(Collectors.toList());
         List<Flight> arrivalFlights = database.getFlights().stream().filter(s -> s.getTo().equals(arrival))
                 .collect(Collectors.toList());
-        List<SearchResultOneTransfer> results = new LinkedList<>();
+        List<SearchResultOneTransfer> results;
 
-        departureFlights.stream().forEach(s -> new SearchResultOneTransfer(s,
-                        arrivalFlights.stream().filter(x -> x.getFrom().equals(s.getTo())).
-                                filter(x->x.getStartingTime().isAfter(s.getLandingTime())).findAny().orElse(null)));
+        results = departureFlights.stream().flatMap(s->
+                arrivalFlights.stream().filter(x -> x.getFrom().equals(s.getTo()))
+                .filter(x->x.getStartingTime().isAfter(s.getLandingTime()))
+                .map(x -> new SearchResultOneTransfer(s, x))).collect(Collectors.toList());
 
-        results = departureFlights.stream().map(s->new SearchResultOneTransfer(s,arrivalFlights.stream().filter(x -> x.getFrom().equals(s.getTo())).
-                filter(x->x.getStartingTime().isAfter(s.getLandingTime())).findFirst()));
-
-//        for (Flight flight : departureFlights) {
-//            arrivalFlights.stream().filter(s -> s.getFrom().equals(flight.getTo()))
-//                    .filter(s -> s.getStartingTime().isAfter(flight.getLandingTime()))
-//                    .forEach(s -> results.add(new SearchResultOneTransfer(flight, s)));
-//        }
         results.stream().forEach(System.out::println);
     }
 }

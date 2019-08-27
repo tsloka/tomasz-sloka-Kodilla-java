@@ -30,7 +30,7 @@ public class Flight {
                 ", to=" + to +
                 ", startingTime=" + startingTime +
                 ", landingTime=" + landingTime +
-                '}';
+                '}'+"\n";
     }
 
     public LocalDateTime getStartingTime() {
