@@ -7,7 +7,6 @@ public class GlutenFreeShop extends EverySupplier implements FoodSupplier {
 
     @Override
     public boolean process(Order order) {
-        // ToDo implementation
         return true;
     }
 
