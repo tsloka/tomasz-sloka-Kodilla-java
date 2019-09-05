@@ -1,24 +1,22 @@
 package com.kodilla.patterns.builder.bigmac;
 
-import org.jetbrains.annotations.Contract;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class Bigmac {
-    private String bun;
+    private Bun bun;
     private int burgers;
-    private Enum<Sauce> sauce;
-    private List<Enum<Ingredients>> ingredients;
+    private Sauce sauce;
+    private List<Ingredients> ingredients;
 
-    private Bigmac(String bun, int burgers, Enum<Sauce> sauce, List<Enum<Ingredients>> ingredients) {
+    private Bigmac(Bun bun, int burgers, Sauce sauce, List<Ingredients> ingredients) {
         this.bun = bun;
         this.burgers = burgers;
         this.sauce = sauce;
         this.ingredients = ingredients;
     }
 
-    public String getBun() {
+    public Bun getBun() {
         return bun;
     }
 
@@ -26,21 +24,52 @@ public class Bigmac {
         return burgers;
     }
 
-    public Enum<Sauce> getSauce() {
+    public Sauce getSauce() {
         return sauce;
     }
 
-    public List<Enum<Ingredients>> getIngredients() {
+    public List<Ingredients> getIngredients() {
         return ingredients;
     }
 
     public static class BigmacBuilder {
-        private String bun = "";
+        private Bun bun = null;
         private int burgers = 0;
-        private Enum<Sauce> sauce = null;
-        private List<Enum<Ingredients>> ingredients = new LinkedList<>();
+        private Sauce sauce = null;
+        private List<Ingredients> ingredients = new LinkedList<>();
 
-        //public String
+        public BigmacBuilder chooseBun (Bun bun) {
+            this.bun = bun;
+            return this;
+        }
 
+        public BigmacBuilder numberOfBurgers(int number) {
+            this.burgers = number;
+            return this;
+        }
+
+        public BigmacBuilder selectSauce (Sauce sauce) {
+            this.sauce = sauce;
+            return this;
+        }
+
+        public BigmacBuilder selectIngredients (Ingredients ingredient) {
+            ingredients.add(ingredient);
+            return this;
+        }
+
+        public Bigmac acceptOrder() {
+            return new Bigmac(bun,burgers,sauce,ingredients);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Bigmac{" +
+                "bun=" + bun +
+                ", burgers=" + burgers +
+                ", sauce=" + sauce +
+                ", ingredients=" + ingredients +
+                '}';
     }
 }
