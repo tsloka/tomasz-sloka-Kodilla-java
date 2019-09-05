@@ -10,7 +10,7 @@ public class TaskFactoryTestSuite {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
-        Task shopping = taskFactory.selectTask(taskFactory.SHOPPING);
+        Task shopping = taskFactory.selectTask(TaskType.SHOPPING);
         boolean beforeExecution = shopping.isTaskExecuted();
         //Then
         Assert.assertEquals(false,beforeExecution);
@@ -23,7 +23,7 @@ public class TaskFactoryTestSuite {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
-        Task printing = taskFactory.selectTask(taskFactory.PAINTING);
+        Task printing = taskFactory.selectTask(TaskType.PAINTING);
         boolean beforeExecution = printing.isTaskExecuted();
         //Then
         Assert.assertEquals(false,beforeExecution);
@@ -36,7 +36,7 @@ public class TaskFactoryTestSuite {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
-        Task driving = taskFactory.selectTask(taskFactory.DRIVING);
+        Task driving = taskFactory.selectTask(TaskType.DRIVING);
         boolean beforeExecution = driving.isTaskExecuted();
         //Then
         Assert.assertEquals(false,beforeExecution);

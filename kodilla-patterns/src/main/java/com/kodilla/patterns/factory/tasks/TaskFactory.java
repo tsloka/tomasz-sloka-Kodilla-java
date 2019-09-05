@@ -1,11 +1,9 @@
 package com.kodilla.patterns.factory.tasks;
 
 public final class TaskFactory {
-    protected static final String SHOPPING = "SHOPPING";
-    protected static final String PAINTING = "PAINTING";
-    protected static final String DRIVING = "DRIVING";
+    protected static TaskType taskType;
 
-    public final Task selectTask(final String taskType) {
+    public final Task selectTask(final TaskType taskType) {
         switch (taskType) {
             case SHOPPING:
                 return new ShoppingTask("Shopping", "Leather belt", 2);
