@@ -26,27 +26,27 @@ public class LibrarySTestSuite {
         System.out.println("<< ===== Beans list ====");
     }
 
-    @Test
-    public void testLoadFromDb() {
-        //Given
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext("com.kodilla.spring");
-        LibraryS libraryS = context.getBean(LibraryS.class);
-        //When
-        libraryS.loadFromDb();
-        //Then
-        //do nothing
-    }
-
-    @Test
-    public void testSaveToDb() {
-        //Given
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext("com.kodilla.spring");
-        LibraryS libraryS = context.getBean(LibraryS.class);
-        //When
-        libraryS.saveToDb();
-        //Then
-        //do nothing
-    }
+//    @Test
+//    public void testLoadFromDb() {
+//        //Given
+//        ApplicationContext context =
+//                new AnnotationConfigApplicationContext("com.kodilla.spring");
+//        LibraryS libraryS = context.getBean(LibraryS.class);
+//        //When
+//        libraryS.loadFromDb();
+//        //Then
+//        //do nothing
+//    }
+//
+//    @Test
+//    public void testSaveToDb() {
+//        //Given
+//        ApplicationContext context =
+//                new AnnotationConfigApplicationContext("com.kodilla.spring");
+//        LibraryS libraryS = context.getBean(LibraryS.class);
+//        //When
+//        libraryS.saveToDb();
+//        //Then
+//        //do nothing
+//    }
 }

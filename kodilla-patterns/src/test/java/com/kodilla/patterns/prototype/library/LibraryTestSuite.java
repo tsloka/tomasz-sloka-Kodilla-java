@@ -50,8 +50,8 @@ public class LibraryTestSuite {
         System.out.println(library);
         System.out.println(shallowCopy);
         System.out.println(deepCopy);
-        Assert.assertEquals(9,library.getBooks().size());
-        Assert.assertEquals(9,shallowCopy.getBooks().size());
+        Assert.assertEquals(10,library.getBooks().size());
+        Assert.assertEquals(10,shallowCopy.getBooks().size());
         Assert.assertEquals(10,deepCopy.getBooks().size());
         Assert.assertEquals(library.getBooks(),shallowCopy.getBooks());
         Assert.assertEquals(testBooks,deepCopy.getBooks());
