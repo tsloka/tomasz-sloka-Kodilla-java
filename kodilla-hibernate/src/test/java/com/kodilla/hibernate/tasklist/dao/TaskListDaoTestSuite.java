@@ -27,8 +27,8 @@ public class TaskListDaoTestSuite {
         taskListDao.save(taskList);
 
         //Then
-        List<TaskList> readTaskList = taskListDao.findByListName(TASK_NAME);
-        Assert.assertNotNull(readTaskList);
+        TaskList readTaskList = taskListDao.findByListName(TASK_NAME);
+        Assert.assertEquals(taskList,readTaskList);
 
         //CleanUp
         taskListDao.deleteTaskListByListName(TASK_NAME);
