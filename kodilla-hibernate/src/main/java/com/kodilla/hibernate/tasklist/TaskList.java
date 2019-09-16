@@ -25,25 +25,25 @@ public class TaskList {
     @Id
     @GeneratedValue
     @NotNull
-    @Column (name = "ID", unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
 
-    @Column (name = "LIST_NAME")
+    @Column(name = "LIST_NAME")
     public String getListName() {
         return listName;
     }
 
-    @Column (name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
 
     @OneToMany(targetEntity = Task.class,
-                mappedBy = "taskList",
-                cascade = CascadeType.ALL,
-                fetch = FetchType.LAZY)
+            mappedBy = "taskList",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
     public List<Task> getTasks() {
         return tasks;
     }

@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 @Transactional
 @Repository
-interface TaskListDao extends CrudRepository<TaskList, Integer> {
+public interface TaskListDao extends CrudRepository<TaskList, Integer> {
     TaskList findByListName(String listName);
     void deleteTaskListByListName(String listName);
 }
