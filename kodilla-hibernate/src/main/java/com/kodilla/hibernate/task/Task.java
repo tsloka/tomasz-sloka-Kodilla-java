@@ -9,21 +9,24 @@ import java.util.Date;
 @NamedQueries({
         @NamedQuery(
                 name = "Task.retrieveLongTasks",
-                query = "SELECT FROM Task WHERE duration > 10"
+                query = "select t FROM Task t WHERE duration > 10"
         ),
         @NamedQuery(
                 name = "Task.retrieveShortTasks",
-                query = "select FROM Task WHERE duration <= 10"
+                query = "select t FROM Task t WHERE duration <= 10"
+        ),
+        @NamedQuery(
+                name = "Task.retrieveTasksWithDurationLongerThan",
+                query = "FROM Task WHERE duration > :DURATION"
         )
 })
 @NamedNativeQuery(
-        name = "Tasks.retrieveTasksWithEnoughTime",
-        query = "SELECT * FROM tasks" +
+        name = "Task.retrieveTasksWithEnoughTime",
+        query = "SELECT * FROM TASK" +
                 " WHERE DATEDIFF(DATE_ADD(created, INTERVAL DURATION DAY), NOW()) > 5",
         resultClass = Task.class
 )
 @Entity
-@Table(name = "TASKS")
 public class Task {
     private int id;
     private String description;

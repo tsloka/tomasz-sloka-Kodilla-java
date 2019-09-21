@@ -1,15 +1,18 @@
 package com.kodilla.hibernate.manytomany;
 
-
-import org.springframework.context.annotation.EnableMBeanExport;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.getEmployeesWithLastName",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        )
+})
+
 @Entity
-@Table(name = "EMPLOYEES")
 public class Employee {
     private int id;
     private String firstname;
