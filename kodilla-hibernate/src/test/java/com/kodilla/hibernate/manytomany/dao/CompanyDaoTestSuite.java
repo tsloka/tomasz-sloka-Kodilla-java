@@ -92,9 +92,9 @@ public class CompanyDaoTestSuite {
         }
 
         //Then
-        Assert.assertEquals(1,lastnameList.size());
+        Assert.assertEquals(9, lastnameList.size());
         Assert.assertEquals("Smith", lastnameList.get(0).getLastname());
-        Assert.assertEquals(1, companies.size());
+        Assert.assertEquals(9, companies.size());
         Assert.assertEquals("Data Maesters", companies.get(0).getName());
 
         //Cleanup

@@ -7,7 +7,8 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.getNameWithFirstThreeLetters",
-        query = "SELECT * FROM companies where instr(company_name, :TFL) > 0"
+        query = "SELECT * FROM Companies WHERE Company_name LIKE CONCAT (:TFL, '%')",
+        resultClass = Company.class
 )
 
 @Entity
@@ -38,7 +39,7 @@ public class Company {
         return name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

@@ -8,7 +8,7 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(
                 name = "Employee.getEmployeesWithLastName",
-                query = "FROM Employee WHERE lastname = :LASTNAME"
+                query = "SELECT e FROM Employee e WHERE lastname = :LASTNAME"
         )
 })
 
