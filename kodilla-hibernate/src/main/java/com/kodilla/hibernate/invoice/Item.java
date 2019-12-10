@@ -1,82 +1,46 @@
 package com.kodilla.hibernate.invoice;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.List;
 
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Item {
-    private int id;
-    private Product product;
-    private BigDecimal price;
-    private int quantity;
-    private BigDecimal value;
-    private Invoice invoice;
 
-    public Item(Product product, BigDecimal price, int quantity) {
+    public Item (Product product, BigDecimal price, int quantity) {
         this.product = product;
         this.price = price;
         this.quantity = quantity;
         this.value = BigDecimal.valueOf(quantity).multiply(price);
     }
 
-    public Item() {
-    }
-
     @Id
     @GeneratedValue
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @NotNull
     @ManyToOne
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+    private Product product;
 
     @NotNull
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
+    private BigDecimal price;
 
     @NotNull
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+    private int quantity;
 
     @NotNull
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    public void setValue(BigDecimal value) {
-        this.value = value;
-    }
+    private BigDecimal value;
 
     @ManyToOne
-    public Invoice getInvoice() {
-        return invoice;
-    }
-
-    public void setInvoice(Invoice invoice) {
-        this.invoice = invoice;
-    }
+    private Invoice invoice;
 }
