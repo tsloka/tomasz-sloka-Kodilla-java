@@ -15,4 +15,7 @@ public interface CompanyDao extends CrudRepository<Company,Integer> {
 
     @Query
     List<Company> getNameWithFirstThreeLetters(@Param("TFL") String tfl);
+
+    @Query
+    List<Company> getNameWithFragmentParameter(@Param("SearchFragment") String searchFragment);
 }

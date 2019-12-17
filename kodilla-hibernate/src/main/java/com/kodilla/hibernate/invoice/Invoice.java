@@ -25,7 +25,7 @@ public class Invoice {
     @NotNull
     private String number;
 
-    @OneToMany (mappedBy = "invoice", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Item> items;
 
 

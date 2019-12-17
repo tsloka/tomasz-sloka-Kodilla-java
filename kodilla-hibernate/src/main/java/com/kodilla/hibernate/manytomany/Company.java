@@ -7,10 +7,14 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.getNameWithFirstThreeLetters",
-        query = "SELECT * FROM Companies WHERE Company_name LIKE CONCAT (:TFL, '%')",
+        query = "SELECT * FROM Companies WHERE Company_name LIKE CONCAT(:TFL, '%')",
         resultClass = Company.class
 )
-
+@NamedNativeQuery(
+        name = "Company.getNameWithFragmentParameter",
+        query = "SELECT * FROM Companies WHERE Company_name LIKE CONCAT('%', :SearchFragment, '%')",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
