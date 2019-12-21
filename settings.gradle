@@ -3,7 +3,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'tomasz-sloka-Kodilla-java'
+rootProject.name = 'Kodilla-course-java'
 include 'kodilla-testing'
 include 'kodilla-stream'
 include 'kodilla-exception'
