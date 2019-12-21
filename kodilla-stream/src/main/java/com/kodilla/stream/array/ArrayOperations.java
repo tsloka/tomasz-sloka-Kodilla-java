@@ -1,8 +1,6 @@
 package com.kodilla.stream.array;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 public interface ArrayOperations {

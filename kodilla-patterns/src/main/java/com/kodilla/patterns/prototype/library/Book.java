@@ -1,7 +1,6 @@
 package com.kodilla.patterns.prototype.library;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public final class Book {
     final String title;

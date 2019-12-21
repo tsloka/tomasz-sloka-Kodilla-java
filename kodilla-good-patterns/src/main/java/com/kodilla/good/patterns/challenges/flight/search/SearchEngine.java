@@ -1,6 +1,5 @@
 package com.kodilla.good.patterns.challenges.flight.search;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
