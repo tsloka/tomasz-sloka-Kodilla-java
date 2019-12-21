@@ -8,25 +8,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
-
 import static com.kodilla.kodillapatterns2.aop.calculator.Watcher.getObject;
 
 @Aspect
 @Component
-public class Watcher {
-    private static final Logger LOGGER = LoggerFactory.getLogger(com.kodilla.kodillapatterns2.aop.calculator.Watcher.class);
+public class FacadeWatcher {
+    private static final Logger LOGGER = LoggerFactory.getLogger(com.kodilla.kodillapatterns2.facade.api.FacadeWatcher.class);
 
-    @Before("execution(* com.kodilla.kodillapatterns2.facade.api.OrderFacade.processOrder(..)) " +
-            "&& args(theNumber) && target(object)")
-    public void logEvent(BigDecimal theNumber, Object object) {
-        LOGGER.info("Class: " + object.getClass().getName() + ", Args: " + theNumber);
+    @Before("execution(* com.kodilla.kodillapatterns2.facade.api.OrderFacade.processOrder(..))")
+    public void logEvent() {
+        LOGGER.info("Class: , Args: ");
     }
 
     @Around("execution(* com.kodilla.kodillapatterns2.facade.api.OrderFacade.processOrder(..))")
     public Object measureTime(final ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         return getObject(proceedingJoinPoint, LOGGER);
     }
-
-
 }

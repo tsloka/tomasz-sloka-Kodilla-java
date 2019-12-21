@@ -1,6 +1,5 @@
 package com.kodilla.kodillapatterns2.aop.calculator;
 
-import com.sun.istack.internal.NotNull;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,7 +16,7 @@ import java.math.BigDecimal;
 public class Watcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(Watcher.class);
 
-    @Before("execution(* com.kodilla.kodillapatterns2.aop.calculator.Calculator.factorial(..))" +
+    @Before("execution(* com.kodilla.kodillapatterns2.aop.calculator.Calculator.factorial(..)) " +
             "&& args(theNumber) && target(object)")
     public void logEvent(BigDecimal theNumber, Object object) {
         LOGGER.info("Class: " + object.getClass().getName() + ", Args: " + theNumber);
